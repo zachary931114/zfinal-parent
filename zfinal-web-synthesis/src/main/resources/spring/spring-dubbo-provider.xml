@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://code.alibabatech.com/schema/dubbo
+            http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="zfinal-synthesis-service" owner="zhoubl" />
+    
+    <dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}"/>
+    
+    <dubbo:provider timeout="10000" threadpool="fixed" threads="100" accepts="1000">
+    	<dubbo:parameter key="shutdown.timeout" value="${dubbo.shutdown.timeout}" />
+    </dubbo:provider>
+
+    <dubbo:protocol name="dubbo" port="${dubbo.synthesis.port}" serialization="kryo" optimizer="me.zhoubl.zfinal.synthesis.optimizer.KryoSerializationOptimizer">
+    	<dubbo:parameter key="shutdown.timeout" value="${dubbo.shutdown.timeout}" />
+    </dubbo:protocol>
+
+    <dubbo:monitor protocol="registry"/>
+
+
+
+</beans>

@@ -1,0 +1,20 @@
+{
+  "querys":[
+
+    {
+      "name": "roleR",
+      "sql": "from sys_role a where a.status = 1 ",
+      "nextSql": "",
+      "orderBy": " a.create_time desc"
+    }
+
+  ],
+  "columns":[
+    {
+      "width": 15,
+      "title": "名称",
+      "name": "a.name",
+      "column": "a.name"
+    }
+  ]
+}

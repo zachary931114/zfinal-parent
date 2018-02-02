@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.zhoubl.zfinal.synthesis.mapper.SysRoleMenuDao">
+
+	<!-- 开启二级缓存 -->
+	<cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="me.zhoubl.zfinal.synthesis.entity.SysRoleMenu">
+		<id column="id" property="id" />
+		<result column="sys_role_id" property="sysRoleId" />
+		<result column="sys_menu_id" property="sysMenuId" />
+		<result column="sys_menu_code" property="sysMenuCode" />
+		<result column="sys_menu_name" property="sysMenuName" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, sys_role_id AS sysRoleId, sys_menu_id AS sysMenuId, sys_menu_code AS sysMenuCode, sys_menu_name AS sysMenuName
+    </sql>
+
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.zhoubl.zfinal.synthesis.mapper.SysMenuDao">
+
+	<!-- 开启二级缓存 -->
+	<cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="me.zhoubl.zfinal.synthesis.entity.SysMenu">
+		<id column="id" property="id" />
+		<result column="version" property="version" />
+		<result column="creater_id" property="createrId" />
+		<result column="create_time" property="createTime" />
+		<result column="updater_id" property="updaterId" />
+		<result column="update_time" property="updateTime" />
+		<result column="status" property="status" />
+		<result column="p_id" property="pId" />
+		<result column="code" property="code" />
+		<result column="name" property="name" />
+		<result column="target" property="target" />
+		<result column="url" property="url" />
+		<result column="icon" property="icon" />
+		<result column="index_val" property="indexVal" />
+		<result column="seq" property="seq" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, version, creater_id AS createrId, create_time AS createTime, updater_id AS updaterId, update_time AS updateTime, status, p_id AS pId, code, name, target, url, icon, index_val AS indexVal, seq
+    </sql>
+
+	<select id="getAllByUser" resultMap="BaseResultMap" flushCache="true">
+		select * from sys_menu a where a.id in (select c.sys_menu_id from sys_role_menu c where c.sys_role_id in (select b.sys_role_id from sys_user_role b where b.sys_user_id = #{user.id} )) and a.status = 1 order by a.seq,a.index_val;
+	</select>
+
+</mapper>
