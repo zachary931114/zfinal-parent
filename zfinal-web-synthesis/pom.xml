@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<project
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>me.zhoubl</groupId>
+        <artifactId>zfinal-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>..</relativePath>
+    </parent>
+
+    <groupId>me.zhoubl</groupId>
+    <artifactId>zfinal-web-synthesis</artifactId>
+    <version>${zfinal-web-synthesis.version}</version>
+    <packaging>war</packaging>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>me.zhoubl</groupId>
+            <artifactId>zfinal-common</artifactId>
+            <version>${zfinal-common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.zhoubl</groupId>
+            <artifactId>zfinal-common-conf</artifactId>
+            <version>${zfinal-common-conf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.zhoubl</groupId>
+            <artifactId>zfinal-common-service</artifactId>
+            <version>${zfinal-common-service.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.zhoubl</groupId>
+            <artifactId>zfinal-common-web</artifactId>
+            <version>${zfinal-common-web.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>me.zhoubl</groupId>
+            <artifactId>zfinal-synthesis-api</artifactId>
+            <version>${zfinal-synthesis-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.zhoubl</groupId>
+            <artifactId>zfinal-synthesis-service</artifactId>
+            <version>${zfinal-synthesis-service.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>synthesis</finalName>
+    </build>
+</project>
