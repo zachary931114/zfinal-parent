@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.zhoubl.zfinal.synthesis.mapper.CommonFilesDao">
+
+	<!-- 开启二级缓存 -->
+	<cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="me.zhoubl.zfinal.synthesis.entity.CommonFiles">
+		<id column="id" property="id" />
+		<result column="version" property="version" />
+		<result column="creater_id" property="createrId" />
+		<result column="create_time" property="createTime" />
+		<result column="updater_id" property="updaterId" />
+		<result column="update_time" property="updateTime" />
+		<result column="status" property="status" />
+		<result column="param" property="param" />
+		<result column="uuid" property="uuid" />
+		<result column="file_name" property="fileName" />
+		<result column="old_file_name" property="oldFileName" />
+		<result column="file_size" property="fileSize" />
+		<result column="file_path" property="filePath" />
+		<result column="file_suffix" property="fileSuffix" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, version, creater_id AS createrId, create_time AS createTime, updater_id AS updaterId, update_time AS updateTime, status, param, uuid, file_name AS fileName, old_file_name AS oldFileName, file_size AS fileSize, file_path AS filePath, file_suffix AS fileSuffix
+    </sql>
+
+</mapper>

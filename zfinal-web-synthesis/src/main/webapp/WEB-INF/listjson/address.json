@@ -1,0 +1,61 @@
+{
+  "querys":[
+
+    {
+      "name": "address",
+      "sql": "from common_address a",
+      "nextSql": "",
+      "orderBy": " a.create_time desc"
+    }
+
+  ],
+  "columns":[
+    {
+      "width": 15,
+      "title": "类型",
+      "name": "a.type",
+      "column": "case a.type when 0 then '默认' end",
+      "keyValue": ["0","默认"],
+      "type": "Select"
+    },
+    {
+      "width": 15,
+      "title": "名称",
+      "name": "a.name",
+      "column": "a.name"
+    },
+    {
+      "width": 15,
+      "title": "地址",
+      "name": "a.address",
+      "column": "a.address"
+    },
+    {
+      "width": 15,
+      "title": "经度",
+      "name": "a.lng",
+      "column": "a.lng"
+    },
+    {
+      "width": 15,
+      "title": "纬度",
+      "name": "a.lat",
+      "column": "a.lat"
+    },
+    {
+      "width": 15,
+      "title": "状态",
+      "name": "a.status",
+      "column": "case a.status when 0 then '停用' when 1 then '启用' end",
+      "keyValue": ["1","启用","0","停用"],
+      "type": "Select"
+    },
+    {
+      "width": 15,
+      "title": "创建时间",
+      "name": "a.create_time",
+      "column": "date_format(a.create_time,'%Y-%m-%d %H:%i')",
+      "type":"Date"
+    }
+  ]
+}
