@@ -1,0 +1,26 @@
+{
+  "querys":[
+
+    {
+      "name": "menuR",
+      "sql": "from sys_menu a left join sys_menu b on b.id = a.p_id ",
+      "nextSql": "",
+      "orderBy": " a.seq,a.index_val"
+    }
+
+  ],
+  "columns":[
+    {
+      "width": 15,
+      "title": "名称",
+      "name": "a.name",
+      "column": "a.name as aname"
+    },
+    {
+      "width": 15,
+      "title": "上级菜单",
+      "name": "b.name",
+      "column": "b.name as bname"
+    }
+  ]
+}

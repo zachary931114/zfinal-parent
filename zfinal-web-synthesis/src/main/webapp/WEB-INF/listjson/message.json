@@ -1,0 +1,25 @@
+{
+  "querys":[
+    {
+      "name": "message",
+      "sql": "from sys_message a where a.sys_user_id = @USERID and a.status = 1",
+      "nextSql": "",
+      "orderBy": " a.create_time desc"
+    }
+  ],
+  "columns":[
+    {
+      "width": 50,
+      "title": "标题",
+      "name": "a.title",
+      "column": "a.title"
+    },
+    {
+      "width": 15,
+      "title": "时间",
+      "name": "a.create_time",
+      "column": "date_format(a.create_time,'%Y-%m-%d %H:%i')",
+      "type":"Date"
+    }
+  ]
+}
